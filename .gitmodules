@@ -1,0 +1,12 @@
+[submodule "gods-eye"]
+	path = gods-eye
+	url = git@github.com:jayn2u/gods-eye.git
+	branch = develop
+[submodule "gods-watching"]
+	path = gods-watching
+	url = git@github.com:jayn2u/gods-watching.git
+	branch = develop
+[submodule "gods-mlops"]
+	path = gods-mlops
+	url = git@github.com:jayn2u/gods-mlops.git
+	branch = develop
