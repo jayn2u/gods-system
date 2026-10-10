@@ -1,4 +1,4 @@
-name: Submodule sync tests
+name: Repository Python tests
 
 on:
   pull_request:
@@ -9,6 +9,9 @@ on:
       - .github/workflows/sync-submodules.yml
       - scripts/sync_submodules.py
       - tests/test_sync_submodules.py
+      - scripts/ansible_auth.py
+      - tests/test_ansible_auth.py
+      - docs/ansible-vault-authentication.md
   push:
     branches:
       - develop
@@ -17,6 +20,9 @@ on:
       - .github/workflows/sync-submodules.yml
       - scripts/sync_submodules.py
       - tests/test_sync_submodules.py
+      - scripts/ansible_auth.py
+      - tests/test_ansible_auth.py
+      - docs/ansible-vault-authentication.md
 
 permissions:
   contents: read
@@ -39,5 +45,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Run submodule sync tests
+      - name: Install Ansible Core
+        run: python3 -m pip install ansible-core==2.16.3
+
+      - name: Run repository tests
         run: python3 -m unittest discover -s tests -v
