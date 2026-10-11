@@ -19,6 +19,8 @@ Incomplete: actual human bbox/caption annotation, immutable dataset publication 
 
 Remove inactive development worktrees only after verified private archives preserve unique source changes, operational receipts, captured frames, and ignored configuration. Keep source branches and common Git histories. Regenerable `.venv` and caches need not be archived.
 
-Preserve production source folders, deployed K3s/storage roots, databases, models, backups, and currently referenced bind mounts. A directory used by an active container is not a safe duplicate. Do not stop or delete those containers merely to satisfy a folder cleanup request without resolving their runtime/data scope.
+Preserve production source folders, deployed K3s/storage roots, databases, models, and backups. The two remaining development bind-mount directories were traced to old test containers and local test processes, not the preserved product services. Those obsolete test services were stopped explicitly before archiving and removing their source worktrees.
+
+Cleanup verified: eleven temporary sibling work directories removed after private archive comparison; seven obsolete task8/task10/task11 test containers removed without deleting their Docker volumes; two old local test processes and the temporary Label Studio port-forward stopped. Git branches and shared repository histories remain available. Unrelated CUHK-PEDES/Codex worktrees are not part of this MLOps cleanup.
 
 Private archives are kept outside Git at `/mnt/data/gods-work-archive/`; do not publish their contents. Archives may include sensitive recovery material. Credentials remain encrypted where originally encrypted; private archive access must remain restricted.
